@@ -12,7 +12,7 @@ import {
 const Navbar = () => {
   return (
     <>
-      <Nav fill >
+      <Nav fill>
         <NavLink to='/'>
           <div>
           <img  width="100px" height="100px" src={logo}></img>

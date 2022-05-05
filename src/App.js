@@ -7,15 +7,14 @@ import About from './pages/about';
 import Services from './pages/services';
 import Contact from './pages/contact';
 import SignUp from './pages/signup';
-import Amplify from 'aws-amplify';
-import awsconfig from './aws-exports';
-import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
+import Skinny from './components/Skinny'
 
 
 
 
 function App() {
   return (
+    <div className='App'>
     <Router>
       <Navbar />
       <Routes>
@@ -26,6 +25,8 @@ function App() {
         <Route path='/sign-up' element={ <SignUp />} />
       </Routes>
     </Router>
+    </div>
+
   );
 }
 

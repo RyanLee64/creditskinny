@@ -5,6 +5,7 @@ import styled from 'styled-components';
 export const Nav = styled.nav`
   background-image: linear-gradient(#377b0b, #4baf0b);  
   height: 80px;
+  width: 100%;
   display: flex;
   padding: 0.5rem calc((100vw - 1000px) / 2);
   z-index: 10;
@@ -44,8 +45,8 @@ export const Bars = styled(FaBars)`
 
 export const NavMenu = styled.div`
   display: flex;
-  align-items: center;
-  margin-right: -24px;
+  align-items: right;
+  justify-content: right;
 
   /* Second Nav */
   /* margin-right: 24px; */
