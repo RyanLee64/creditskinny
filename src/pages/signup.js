@@ -1,23 +1,31 @@
 import React from 'react';
-import Amplify from 'aws-amplify';
+import {Amplify} from 'aws-amplify';
+import { AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import awsconfig from '../aws-exports';
-import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
+
 Amplify.configure(awsconfig);
 
+const AuthStateApp = () => {
+  const [authState, setAuthState] = React.useState();
+  const [user, setUser] = React.useState();
 
-const SignUp = () => {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '90vh'
-      }}
-    >
-      <h1>Sign Up</h1>
+  React.useEffect(() => {
+    return onAuthUIStateChange((nextAuthState, authData) => {
+      setAuthState(nextAuthState);
+      setUser(authData);
+    });
+  }, []);
+
+  return authState === AuthState.SignedIn && user ? (
+    <div className="App">
+      <div>Hello, {user.username}</div>
+      <AmplifySignOut />
     </div>
+  ) : (
+    <AmplifyAuthenticator />
   );
 };
 
-export default withAuthenticator(SignUp);
+export default AuthStateApp;
+
