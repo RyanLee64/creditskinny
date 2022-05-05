@@ -3,7 +3,15 @@
   background-image: linear-gradient(#E9E9E9,
   #F6F6F6)
 }
-
+amplify-authenticator {
+  --background-color: blue;
+}
+:root {
+  --amplify-primary-color: #377b0b;
+  --amplify-primary-tint: #3f6060;
+  --amplify-primary-shade: #377b0b;
+  --amplify-background-color: rgb(194, 187, 187);
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

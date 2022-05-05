@@ -3,7 +3,6 @@ import {Amplify} from 'aws-amplify';
 import { AmplifyAuthenticator, AmplifySignOut, AmplifySignUp } from '@aws-amplify/ui-react';
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import awsconfig from '../aws-exports';
-import '../App.css';
 
 Amplify.configure(awsconfig);
 
@@ -24,11 +23,10 @@ const AuthStateApp = () => {
       <AmplifySignOut />
     </div>
   ) : (
-    <AmplifyAuthenticator initialAuthState="signup">
+    <AmplifyAuthenticator>
       <AmplifySignUp/>
     </AmplifyAuthenticator>
   );
 };
 
 export default AuthStateApp;
-
