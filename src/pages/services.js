@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
-const Services = () => {
+const Services = ({user}) => {
+
   return (
+    
     <div
       style={{
         display: 'flex',
@@ -10,7 +12,8 @@ const Services = () => {
         height: '90vh'
       }}
     >
-      <h1>Services</h1>
+      <h1>Services and {JSON.stringify(user).substring(0,20)}</h1>
+      
     </div>
   );
 };

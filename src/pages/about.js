@@ -1,6 +1,6 @@
 import React from 'react';
 
-const About = () => {
+const About = (user) => {
   return (
     <div
       style={{
@@ -10,7 +10,7 @@ const About = () => {
         height: '90vh'
       }}
     >
-      <h1>About</h1>
+      <h1>About {JSON.stringify(user).substring(0,20)}</h1>
     </div>
   );
 };

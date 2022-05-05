@@ -14,17 +14,19 @@ import Skinny from './components/Skinny'
 
 
 function App() {
+  const [user, setUser] = React.useState("");
+
   return (
     <div className='App'>
     <Router>
       <Navbar />
       <Routes>
         <Route path='/' exact element={<Home />} /> 
-        <Route path='/about' element={<About />} />
-        <Route path='/services' element={ <Services />} />
+        <Route path='/about' element={<About user={user} />} />
+        <Route path='/services' element={ <Services user={user}/>} />
         <Route path='/contact-us' element={ <Contact />} />
         <Route path='/sign-up' element={ <SignUp />} />
-        <Route path='/sign-in' element={ <SignIn />} />
+        <Route path='/sign-in' element={ <SignIn user={user} setUser={setUser}/>} />
       </Routes>
     </Router>
     </div>
