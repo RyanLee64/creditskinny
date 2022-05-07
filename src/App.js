@@ -28,7 +28,7 @@ function App() {
         <Route path='/contact-us' element={ <Contact />} />
         <Route path='/sign-up' element={ <SignUp />} />
         <Route path='/sign-in' element={ <SignIn user={user} setUser={setUser}/>} />
-        <Route path='/profile' element={ <Profile user={user} setUser={setUser}/>}/>
+        <Route path='/profile' element={ <Profile />}/>
       </Routes>
     </Router>
     </div>

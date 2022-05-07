@@ -1,11 +1,16 @@
 import React from 'react';
-import { Auth } from 'aws-amplify';
+import { Auth, auth0SignInButton } from 'aws-amplify';
 import { useNavigate } from "react-router-dom";
 
 
 
 
+
+
 const Profile = () => {
+
+
+
 async function signOut() {
     try {
         await Auth.signOut().then( (r) => 
@@ -17,8 +22,18 @@ async function signOut() {
 }
 let navigate = useNavigate();
 
+const [user, setUser] = React.useState({attributes:{email: "word"}});
 
-  return (
+React.useEffect(() => {
+    const fetchUser = async () => {
+    const user = await Auth.currentAuthenticatedUser();
+    console.log(user);
+    setUser(user);    
+    };
+  fetchUser();
+
+}, []);
+  return user.attributes.email != undefined ? (
     <div
       style={{
         display: 'flex',
@@ -27,7 +42,7 @@ let navigate = useNavigate();
         height: '90vh'
       }}
     >
-      <h1>User Profile</h1>
+      <h1>Welcome Back {user.attributes.email}</h1>
       <br></br>
       <button
         onClick={() => signOut()}
@@ -36,6 +51,8 @@ let navigate = useNavigate();
         </button>
 
     </div>
+  ) : (
+    <div></div>
   );
 };
 
