@@ -8,6 +8,7 @@ import Services from './pages/services';
 import Contact from './pages/contact';
 import SignUp from './pages/signup';
 import SignIn from './pages/signin';
+import Profile from './pages/profile';
 import Skinny from './components/Skinny'
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/contact-us' element={ <Contact />} />
         <Route path='/sign-up' element={ <SignUp />} />
         <Route path='/sign-in' element={ <SignIn user={user} setUser={setUser}/>} />
+        <Route path='/profile' element={ <Profile user={user} setUser={setUser}/>}/>
       </Routes>
     </Router>
     </div>

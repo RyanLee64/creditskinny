@@ -2,6 +2,7 @@ import React from 'react';
 import {Amplify, Auth, API} from 'aws-amplify';
 import { AmplifyAuthenticator, AmplifySignOut, AmplifySignUp } from '@aws-amplify/ui-react';
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
+import { useNavigate } from "react-router-dom";
 import awsconfig from '../aws-exports';
 Amplify.configure({  API: {
     endpoints: [
@@ -18,6 +19,8 @@ const AuthStateApp = ( {user, setUser}) => {
   const [authState, setAuthState] = React.useState();
   const apiName = "AI Customer Service API";
   const path = "/chatbot";
+  let navigate = useNavigate();
+
   
 
   const onClick = async () => 
@@ -36,6 +39,7 @@ const AuthStateApp = ( {user, setUser}) => {
                 }]})
             
         };
+        
         API.post(apiName,path ,request).then((res) => console.log(res));
         
 
@@ -49,17 +53,8 @@ const AuthStateApp = ( {user, setUser}) => {
   }, []);
 
   return authState === AuthState.SignedIn && user ? (
-    
-    <div className="App">
+    navigate("/profile")
 
-        <button
-        onClick={() => onClick()}
-        className="btn btn-primary">
-        Make a Call
-        </button>
-      <div>Hello, {user.username}{console.log(user)}</div>
-      <AmplifySignOut />
-    </div>
   ) : (
     <AmplifyAuthenticator>
       <AmplifySignUp/>

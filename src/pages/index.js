@@ -1,5 +1,6 @@
 import React from 'react';
 import Skinny from '../components/Skinny'
+import { ProgressBar, Button } from 'react-bootstrap';
 
 let c = [{
   "id":	1,
@@ -36,6 +37,7 @@ let c = [{
 const Home = () => {
   return (
     <>
+    <ProgressBar animated  variant="success" now={45} label={`${45}%`} />
     <div 
       style={{
         padding: '50px',
