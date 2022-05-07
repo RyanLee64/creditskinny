@@ -18,7 +18,8 @@ function App() {
   const [user, setUser] = React.useState("");
 
   return (
-    <div className='App'>
+    <>
+    <div className='App Font'>
     <Router>
       <Navbar />
       <Routes>
@@ -32,7 +33,7 @@ function App() {
       </Routes>
     </Router>
     </div>
-
+    </>
   );
 }
 

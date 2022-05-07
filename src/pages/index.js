@@ -37,7 +37,6 @@ let c = [{
 const Home = () => {
   return (
     <>
-    <ProgressBar animated  variant="success" now={45} label={`${45}%`} />
     <div 
       style={{
         padding: '50px',

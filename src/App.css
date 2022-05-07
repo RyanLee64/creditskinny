@@ -3,6 +3,7 @@
   background-image: linear-gradient(#E9E9E9,
   #F6F6F6)
 }
+
 amplify-authenticator {
   --background-color: blue;
 }
@@ -45,4 +46,13 @@ amplify-authenticator {
   to {
     transform: rotate(360deg);
   }
+}
+.progress-custom {
+  height: 100px; /* needs to be an absolute measurement unless one of it's parent has an absolute height */
+}
+div{
+  text-align: left;
+}
+.Font{
+  font-family: 'Pattaya', sans-serif;
 }
