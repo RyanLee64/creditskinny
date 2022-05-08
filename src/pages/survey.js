@@ -11,7 +11,6 @@ const Survey = () => {
         height: '90vh'
       }}
     >
-      <h1>Survey</h1>
       <UserForm/>
     </div>
   );

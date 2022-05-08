@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
-import { List, ListItem, ListItemText } from '@material-ui/core/';
+import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { Select, DialogTitle, DialogContent, DialogContentText } from '@material-ui/core';
+import { Input, MenuItem, InputLabel } from '@material-ui/core';
 
-export class Confirm extends Component {
+export class SectionDivider extends Component {
   continue = e => {
     e.preventDefault();
-    // PROCESS FORM //
     this.props.nextStep();
   };
 
@@ -16,32 +17,26 @@ export class Confirm extends Component {
     e.preventDefault();
     this.props.prevStep();
   };
-  
+
   render() {
-    let confirmations = []
-    const {values} = this.props;
-    Object.keys(values).forEach(function (value) {
-      confirmations.push( <div><ListItem>
-        <ListItemText primary={value} secondary={values[value]} />
-        </ListItem>
-        </div>)
-    });
+    const { message } = this.props;
     return (
       <MuiThemeProvider>
-         <>
-          <Dialog
+        <>
+        <Dialog
             open
             fullWidth
             maxWidth='sm'
           >
-            <AppBar title="Confirm User Data" />
-            <List>
-              {confirmations}
-              
-            </List>
-            <br />
-
-            <Button
+        <DialogTitle>
+          {"Time to earn you free points!"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            {message}
+          </DialogContentText>
+        </DialogContent>
+        <Button
               color="secondary"
               variant="contained"
               onClick={this.back}
@@ -51,12 +46,13 @@ export class Confirm extends Component {
               color="primary"
               variant="contained"
               onClick={this.continue}
-            >Confirm & Continue</Button>
-          </Dialog>
+            >Continue</Button>
+      </Dialog>
+
         </>
       </MuiThemeProvider>
     );
   }
 }
 
-export default Confirm;
+export default SectionDivider;
