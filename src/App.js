@@ -9,8 +9,11 @@ import Contact from './pages/contact';
 import SignUp from './pages/signup';
 import SignIn from './pages/signin';
 import Profile from './pages/profile';
+import Survey from './pages/survey';
 import Skinny from './components/Skinny'
-
+import {Amplify} from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
 
 
 
@@ -30,6 +33,7 @@ function App() {
         <Route path='/sign-up' element={ <SignUp />} />
         <Route path='/sign-in' element={ <SignIn user={user} setUser={setUser}/>} />
         <Route path='/profile' element={ <Profile />}/>
+        <Route path='/user/onboarding' element={ <Survey />}/>
       </Routes>
     </Router>
     </div>
