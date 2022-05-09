@@ -66,9 +66,13 @@ React.useEffect(() => {
 }, []);
   return profile.currentModule == -1 ? (
     <div>
-      Welcome to Credit Skinny! You will be guided through a survey that inform our personalized credit card suggestions!
+      <h1>Welcome to Credit Skinny! You will be guided through a survey that inform our personalized credit card suggestions!</h1>
       <br></br>
-      <Button variant="light" href="/user/onboarding">Start Onboarding</Button>
+      <div className="d-grid gap-2">
+  <Button variant="success" size="lg" href="/user/onboarding">
+    Begin Onboarding
+  </Button>
+    </div>
 
     </div>
     
@@ -79,15 +83,32 @@ React.useEffect(() => {
     
       <br></br>
 
-      <h3>Your learning modules ProgressBar</h3>
+      <h3>Your learning modules Progress Bar</h3>
       <ProgressBar animated  variant="success" now={45} label={`${45}%`} />
 
       <br></br>
-      <button
+     
+        <div className="d-grid gap-2">
+  <Button variant="outline-primary" size="lg">
+    Personalized Credit Card Vault
+  </Button>
+  <Button variant="outline-secondary" size="lg">
+    Current Learning Module
+  </Button>
+  <Button
+        variant="outline-info" size="lg"
+        
+        >
+        Edit Profile
+  </Button>
+  <Button
+        variant="outline-success" size="lg"
         onClick={() => signOut()}
-        className="btn btn-primary">
+        >
         Sign Out
-        </button>
+  </Button>
+</div>
+
 
     </div>
   );

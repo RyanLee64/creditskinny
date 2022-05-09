@@ -1,7 +1,9 @@
 .App {
   text-align: center;
   background-image: linear-gradient(#E9E9E9,
-  #F6F6F6)
+  #F6F6F6);
+  height: 100vh;
+  display: flex-box;
 }
 
 amplify-authenticator {
@@ -50,9 +52,7 @@ amplify-authenticator {
 .progress-custom {
   height: 100px; /* needs to be an absolute measurement unless one of it's parent has an absolute height */
 }
-div{
-  text-align: left;
-}
+
 .Font{
   font-family: 'Pattaya', sans-serif;
 }

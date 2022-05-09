@@ -24,7 +24,6 @@ const Nbar = () => {
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/about">About</Nav.Link>
         <Nav.Link href="/services">Services</Nav.Link>
-        <Nav.Link href="/sign-up">Sign Up</Nav.Link>
         </Nav>
         <Button variant="light" href="/sign-in">Sign In</Button>
       </Container>
