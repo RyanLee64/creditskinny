@@ -17,7 +17,7 @@ Amplify.configure({  API: {
 
 const AuthStateApp = ( {user, setUser}) => {
   const [authState, setAuthState] = React.useState();
-  const apiName = "AI Customer Service API";
+  const apiName = "AI Customer Service API 21";
   const path = "/chatbot";
   let navigate = useNavigate();
 

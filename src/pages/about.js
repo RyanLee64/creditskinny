@@ -10,7 +10,7 @@ const About = (user) => {
         height: '90vh'
       }}
     >
-      <h1>About {JSON.stringify(user).substring(0,20)}</h1>
+      Credit Skinny was borne out of a marketing project in 2019. The goal was simple. Teach college students begi
     </div>
   );
 };

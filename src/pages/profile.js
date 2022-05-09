@@ -31,7 +31,7 @@ let tmpProfile = {
   };
 const [user, setUser] = React.useState({attributes:{email: "user"}});
 const [profile, setProfile] = React.useState(tmpProfile);
-const apiName = "AI Customer Service API";
+const apiName = "AI Customer Service API 21";
 const path = "/chatbot";
 
 React.useEffect(() => {
