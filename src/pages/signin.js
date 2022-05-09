@@ -7,7 +7,7 @@ import awsconfig from '../aws-exports';
 Amplify.configure({  API: {
     endpoints: [
       {
-        name: "AI Customer Service API",
+        name: "AI Customer Service API 21",
         endpoint:
           "https://wa7amainke.execute-api.us-east-1.amazonaws.com/dev",
       },

@@ -10,11 +10,6 @@
       "StackName": "amplify-creditskinny-dev-143227",
       "StackId": "arn:aws:cloudformation:us-east-1:215814922646:stack/amplify-creditskinny-dev-143227/8e88b0a0-cbd8-11ec-bc10-129d1bf0d89b",
       "AmplifyAppId": "d2khpy5mn44tdn"
-    },
-    "categories": {
-      "auth": {
-        "creditskinny88239757": {}
-      }
     }
   }
 }
