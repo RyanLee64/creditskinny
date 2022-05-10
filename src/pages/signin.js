@@ -4,46 +4,12 @@ import { AmplifyAuthenticator, AmplifySignOut, AmplifySignUp } from '@aws-amplif
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import { useNavigate } from "react-router-dom";
 import awsconfig from '../aws-exports';
-Amplify.configure({  API: {
-    endpoints: [
-      {
-        name: "AI Customer Service API 21",
-        endpoint:
-          "https://wa7amainke.execute-api.us-east-1.amazonaws.com/dev",
-      },
-    ],
-  }});
 
 
-const AuthStateApp = ( {user, setUser}) => {
+
+const AuthStateApp = ( {user, setUser, apiName}) => {
   const [authState, setAuthState] = React.useState();
-  const apiName = "AI Customer Service API 21";
-  const path = "/chatbot";
   let navigate = useNavigate();
-
-  
-
-  const onClick = async () => 
-    {   
-        let user = await Auth.currentAuthenticatedUser();
-        let token = user.signInUserSession.idToken.jwtToken;
-        console.log(token)
-        let request = {
-            headers: {"Authorization": token},
-            body: 
-                JSON.stringify({messages: [{
-                  type: 'unstructured',
-                  unstructured: {
-                    text: "Hi im paul"
-                  }
-                }]})
-            
-        };
-        
-        API.post(apiName,path ,request).then((res) => console.log(res));
-        
-
-    };
 
   React.useEffect(() => {
     return onAuthUIStateChange((nextAuthState, authData) => {

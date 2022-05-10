@@ -15,7 +15,16 @@ import {Amplify} from 'aws-amplify';
 import awsconfig from './aws-exports';
 import Footer from './components/Footer'
 Amplify.configure(awsconfig);
-
+Amplify.configure({  API: {
+  endpoints: [
+    {
+      name: "CreditSkinny",
+      endpoint:
+        "https://0kx8i3p4ei.execute-api.us-east-1.amazonaws.com/dev",
+    },
+  ],
+}});
+const apiName="CreditSkinny"
 
 
 function App() {
@@ -33,7 +42,7 @@ function App() {
         <Route path='/contact-us' element={ <Contact />} />
         <Route path='/sign-up' element={ <SignUp />} />
         <Route path='/sign-in' element={ <SignIn user={user} setUser={setUser}/>} />
-        <Route path='/profile' element={ <Profile />}/>
+        <Route path='/profile' element={ <Profile apiName={apiName}/>}/>
         <Route path='/user/onboarding' element={ <Survey />}/>
       </Routes>
       <Footer />  

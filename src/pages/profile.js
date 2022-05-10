@@ -8,7 +8,7 @@ import '../App.css';
 
 
 
-const Profile = () => {
+const Profile = ({apiName}) => {
 
 
 
@@ -31,8 +31,6 @@ let tmpProfile = {
   };
 const [user, setUser] = React.useState({attributes:{email: "user"}});
 const [profile, setProfile] = React.useState(tmpProfile);
-const apiName = "AI Customer Service API 21";
-const path = "/chatbot";
 
 React.useEffect(() => {
     const fetchUser = async () => {
@@ -43,24 +41,19 @@ React.useEffect(() => {
     let request = {
       headers: {"Authorization": token},
       body: 
-          JSON.stringify({messages: [{
-            type: 'unstructured',
-            unstructured: {
-              text: "Hi im paul"
-            }
-          }]})
+          JSON.stringify({
+            "username": "b138f03f-4904-4031-ada1-767765199a39",
+            "currentModule": "1",
+            "email": "dbl2127@columbia.edu",
+            "firstName": "ryan",
+            "lastName": "lee"
+           })
       
     };
-    let p = await API.post(apiName,path ,request)
-    let body = JSON.parse(p.body)
-    p = body
+    let p = await API.get(apiName,"/user/"+user.username ,request)
     console.log(p)
-    setUser(user);
-    setProfile(p);
-    console.log(p.currentModule)
-    console.log("logging the result")
-    console.log(p)
-    };
+    setProfile(p)
+    }; 
   fetchUser();
 
 }, []);
