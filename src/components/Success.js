@@ -16,22 +16,20 @@ export class Success extends Component {
     e.preventDefault();
     this.props.prevStep();
   };
-  makeApiCall =  async values => {
+  makeApiCall =  async values =>  {
     const user = await Auth.currentAuthenticatedUser();
     let token = user.signInUserSession.idToken.jwtToken;
-    const apiName = "AI Customer Service API 21";
-    const path = "/survey";
+    let username = user.username
+    let final = Object.assign(values, {"username":username})
+    const path = "/user/uploadsurvey";
     console.log(user);
     let request = {
       headers: {"Authorization": token},
       body: 
-          JSON.stringify(values)
+          JSON.stringify(final)
       
     };
-    let p = await API.post(apiName,path ,request)
-    let body = JSON.parse(p.body)
-    console.log("from success")
-    console.log(p)
+    let p = await API.post(this.props.apiName,path ,request)
   };
 
   render() {
@@ -46,7 +44,7 @@ export class Success extends Component {
           >
             <AppBar title="Success" />
             <h1>Thank You For Your Submission</h1>
-            <p>You will get an email with further instructions.</p>
+            <p>Navigate to your Card Vault to see your reccomendations!</p>
             <Button
               href="/profile"
               color="primary"

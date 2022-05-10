@@ -1,7 +1,7 @@
 import React from 'react';
 import UserForm from '../components/UserForm';
 
-const Survey = () => {
+const Survey = ({apiName}) => {
   return (
     <div
       style={{
@@ -11,7 +11,7 @@ const Survey = () => {
         height: '90vh'
       }}
     >
-      <UserForm/>
+      <UserForm apiName={apiName}/>
     </div>
   );
 };

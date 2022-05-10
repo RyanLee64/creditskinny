@@ -43,7 +43,7 @@ function App() {
         <Route path='/sign-up' element={ <SignUp />} />
         <Route path='/sign-in' element={ <SignIn user={user} setUser={setUser}/>} />
         <Route path='/profile' element={ <Profile apiName={apiName}/>}/>
-        <Route path='/user/onboarding' element={ <Survey />}/>
+        <Route path='/user/onboarding' element={ <Survey apiName={apiName}/>}/>
       </Routes>
       <Footer />  
     </Router>

@@ -143,7 +143,7 @@ export class UserForm extends Component {
         );
         
       case 7:
-      return <Success values={values}/>; 
+      return <Success values={values} apiName={this.props.apiName}/>; 
       default:
         (console.log('This is a multi-step form built with React.'))
     }
