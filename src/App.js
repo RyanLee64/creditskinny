@@ -14,6 +14,7 @@ import Skinny from './components/Skinny'
 import {Amplify} from 'aws-amplify';
 import awsconfig from './aws-exports';
 import Footer from './components/Footer'
+import ModulePlayer from './components/ModulePlayer';
 Amplify.configure(awsconfig);
 Amplify.configure({  API: {
   endpoints: [
@@ -32,6 +33,10 @@ function App() {
 
   return (
     <>
+    <link
+    rel="stylesheet"
+    href="https://video-react.github.io/assets/video-react.css"
+    />
     <div className='App Font'>
     <Router>
       <Navbar />
@@ -48,6 +53,16 @@ function App() {
       <Footer />  
     </Router>
     </div>
+    <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '350px',
+        width:'350px'
+      }}>
+    <ModulePlayer />
+    </div>
+
     </>
   );
 }
