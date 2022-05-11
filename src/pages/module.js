@@ -28,6 +28,7 @@ let navigate = useNavigate();
 
 const [profile, setProfile] = React.useState("");
 const [answers, setAnswers] = React.useState("");
+const [nextModule, setNextModule] = React.useState(0);
 
 
 React.useEffect(() => {
@@ -39,10 +40,13 @@ React.useEffect(() => {
 
     //let mod = await API.get(apiname,"/module/"+p.currentModule, {})
     //setAnswers(mod);
+    console.log("we noticed a change")
     };  
   fetchModule();
 
-}, []);
+}, [nextModule]);
+
+
 
 let url = "https://creditskinnymodules.s3.us-east-1.amazonaws.com/module"+profile.currentModule+".mp4"
 
@@ -55,7 +59,7 @@ let url = "https://creditskinnymodules.s3.us-east-1.amazonaws.com/module"+profil
     <h2>Module {profile.currentModule}</h2><br></br>
 
     <ModulePlayer source={url}/><br></br>
-    <Quiz apiName={apiName} answers={answers} userAnswer={answers[0]} correctAnswer={answers[0]} />
+    <Quiz apiName={apiName} answers={answers} userAnswer={answers[0]} correctAnswer={answers[0]} step="1" nextModule={nextModule} setNextModule={setNextModule} />
 
     </Col>
     <Col md={3}></Col>
