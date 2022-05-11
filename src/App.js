@@ -10,6 +10,7 @@ import SignUp from './pages/signup';
 import SignIn from './pages/signin';
 import Profile from './pages/profile';
 import Survey from './pages/survey';
+import Module from './pages/module';
 import Skinny from './components/Skinny'
 import {Amplify} from 'aws-amplify';
 import awsconfig from './aws-exports';
@@ -37,6 +38,13 @@ function App() {
     rel="stylesheet"
     href="https://video-react.github.io/assets/video-react.css"
     />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
     <div className='App Font'>
     <Router>
       <Navbar />
@@ -49,6 +57,7 @@ function App() {
         <Route path='/sign-in' element={ <SignIn user={user} setUser={setUser}/>} />
         <Route path='/profile' element={ <Profile apiName={apiName}/>}/>
         <Route path='/user/onboarding' element={ <Survey apiName={apiName}/>}/>
+        <Route path='/module' element={<Module apiName={apiName}/>}/>
       </Routes>
       <Footer />  
     </Router>
