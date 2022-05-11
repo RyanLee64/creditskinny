@@ -5,7 +5,7 @@ const ModulePlayer = ({source}) => {
     return (
     <Player
       playsInline
-      poster="/assets/poster.png"
+      poster="https://creditskinnymodules.s3.amazonaws.com/logo.png"
       src={source}
     />
   );

@@ -28,15 +28,24 @@ let navigate = useNavigate();
 
 const [profile, setProfile] = React.useState("");
 const [answers, setAnswers] = React.useState("");
+const [correctAnswer, setCorrectAnswer] = React.useState("");
+const [question, setQuestion] = React.useState("");
 const [nextModule, setNextModule] = React.useState(0);
-
+const [visible, setVisible] = React.useState("0")
 
 React.useEffect(() => {
     const fetchModule = async () => {
     const user = await Auth.currentAuthenticatedUser();
     let p = await API.get(apiName,"/user/"+user.username ,{})
+    let path = "/module/"+p.currentModule
+    console.log(path)
+    let mod = await API.get(apiName, path,{})
     setProfile(p);
-    setAnswers(["female"])
+    setAnswers(mod.answers)
+    setCorrectAnswer(mod.correctAnswer)
+    setQuestion(mod.question)
+    console.log(question)
+    setVisible("0")
 
     //let mod = await API.get(apiname,"/module/"+p.currentModule, {})
     //setAnswers(mod);
@@ -50,7 +59,7 @@ React.useEffect(() => {
 
 let url = "https://creditskinnymodules.s3.us-east-1.amazonaws.com/module"+profile.currentModule+".mp4"
 
-  return answers != ""? (
+  return answers != "" && visible != "0"? (
     <>
     <Container>
     <Row className = "mx-auto">
@@ -59,7 +68,8 @@ let url = "https://creditskinnymodules.s3.us-east-1.amazonaws.com/module"+profil
     <h2>Module {profile.currentModule}</h2><br></br>
 
     <ModulePlayer source={url}/><br></br>
-    <Quiz apiName={apiName} answers={answers} userAnswer={answers[0]} correctAnswer={answers[0]} step="1" nextModule={nextModule} setNextModule={setNextModule} />
+    
+    <Quiz setVisible={setVisible} question={question} profile={profile} apiName={apiName} answers={answers} userAnswer={answers[0]} correctAnswer={correctAnswer} step="1" nextModule={nextModule} setNextModule={setNextModule} />
 
     </Col>
     <Col md={3}></Col>
@@ -70,13 +80,13 @@ let url = "https://creditskinnymodules.s3.us-east-1.amazonaws.com/module"+profil
 
 
         <div className="d-grid gap-2">
-  <Button variant="outline-primary" size="lg">
-    Personalized Credit Card Vault
-  </Button>
-  <Button variant="outline-secondary" size="lg">
-    Current Learning Module
-  </Button>
-  <Button
+    <Button variant="outline-primary" size="lg" onClick={() => setVisible("1")}>
+        Take Quiz
+    </Button>
+    <Button variant="outline-secondary" size="lg">
+        Current Learning Module
+    </Button>
+    <Button
         variant="outline-info" size="lg"
         
         >
@@ -93,7 +103,45 @@ let url = "https://creditskinnymodules.s3.us-east-1.amazonaws.com/module"+profil
 
     </div>
     </>
-  ):(<div></div>)   
+  ):(<>
+    <Container>
+    <Row className = "mx-auto">
+    <Col md={3}></Col>
+    <Col md={6}>
+    <h2>Module {profile.currentModule}</h2><br></br>
+
+    <ModulePlayer source={url}/><br></br>
+    
+
+    </Col>
+    <Col md={3}></Col>
+
+    </Row>
+    </Container>
+    <div>
+
+
+        <div className="d-grid gap-2">
+    <Button variant="outline-primary" size="lg" onClick={() => setVisible("1")}>
+        Take Quiz
+    </Button>
+    <Button
+        variant="outline-info" size="lg"
+        onClick={() => navigate("/profile")}
+        >
+        Go back to Profile
+  </Button>
+  <Button
+        variant="outline-success" size="lg"
+        onClick={() => signOut()}
+        >
+        Sign Out
+  </Button>
+</div>
+
+
+    </div>
+    </>)   
 };
 
 export default Module;

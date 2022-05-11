@@ -22,7 +22,7 @@ Amplify.configure({  API: {
     {
       name: "CreditSkinny",
       endpoint:
-        "https://0kx8i3p4ei.execute-api.us-east-1.amazonaws.com/dev",
+        "https://0kx8i3p4ei.execute-api.us-east-1.amazonaws.com/prod",
     },
   ],
 }});

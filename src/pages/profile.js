@@ -85,12 +85,11 @@ React.useEffect(() => {
   <Button variant="outline-primary" size="lg">
     Personalized Credit Card Vault
   </Button>
-  <Button variant="outline-secondary" size="lg">
+  <Button variant="outline-secondary" size="lg" onClick={() => navigate("/module")}>
     Current Learning Module
   </Button>
   <Button
         variant="outline-info" size="lg"
-        
         >
         Edit Profile
   </Button>
