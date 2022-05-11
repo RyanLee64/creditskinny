@@ -72,8 +72,6 @@ export class Quiz extends Component {
 
                    {  <Dialog
                       open
-                      fullWidth
-                      maxWidth='sm'
                     >
                       <form onSubmit={this.handleSubmit}>
                       <FormControl>

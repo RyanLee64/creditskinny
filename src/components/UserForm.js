@@ -79,6 +79,7 @@ export class UserForm extends Component {
     console.log(Object.keys(this.state))
     const { step,...rest } = this.state;
     const values = rest
+    console.log(this.state);
 
     switch (step) {
       case 1:

@@ -77,21 +77,16 @@ React.useEffect(() => {
       <br></br>
 
       <h3>Your learning modules Progress Bar</h3>
-      <ProgressBar animated  variant="success" now={100*(parseInt(profile.currentModule)/10)} label={`${100*(parseInt(profile.currentModule)/10)}%`} />
+      <ProgressBar animated  variant="success" now={100*((parseInt(profile.currentModule)-1)/10)} label={`${100*((parseInt(profile.currentModule)-1)/10)}%`} />
 
       <br></br>
      
         <div className="d-grid gap-2">
-  <Button variant="outline-primary" size="lg">
+  <Button variant="outline-primary" size="lg" onClick={() => navigate("/vault")}>
     Personalized Credit Card Vault
   </Button>
   <Button variant="outline-secondary" size="lg" onClick={() => navigate("/module")}>
     Current Learning Module
-  </Button>
-  <Button
-        variant="outline-info" size="lg"
-        >
-        Edit Profile
   </Button>
   <Button
         variant="outline-success" size="lg"

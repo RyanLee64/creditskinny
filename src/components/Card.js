@@ -14,7 +14,7 @@ const Card = ({card}) => {
         }
         </div>
         <div className='col-md-3'>
-        <img src={card.img} alt="a credit card"></img>
+        <img style={{width:"250px", "max-height":"100%"}}src={card.img} alt="a credit card"></img>
         </div>
 </div>
   )
