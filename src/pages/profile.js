@@ -77,7 +77,7 @@ React.useEffect(() => {
       <br></br>
 
       <h3>Your learning modules Progress Bar</h3>
-      <ProgressBar animated  variant="success" now={45} label={`${45}%`} />
+      <ProgressBar animated  variant="success" now={100*(parseInt(profile.currentModule)/10)} label={`${100*(parseInt(profile.currentModule)/10)}%`} />
 
       <br></br>
      

@@ -1,6 +1,9 @@
 import React from 'react';
 import Skinny from '../components/Skinny'
 import { ProgressBar, Button } from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
+
+
 
 let c = [{
   "id":	1,
@@ -35,6 +38,8 @@ let c = [{
 ]
 
 const Home = () => {
+  let navigate = useNavigate();
+
   return (
     <>
     <div 
@@ -45,7 +50,9 @@ const Home = () => {
 
     >
       <h1>Ready to Start your Credit Journey?</h1>
+      <Button style={{border: "white", background:"#4baf0b", size: "xl"}} onClick={() => navigate("/sign-up")}>Get Started</Button>
       <br></br>
+
     </div>
     < Skinny cards={c} />
     </>
