@@ -7,7 +7,7 @@ import awsconfig from '../aws-exports';
 
 
 
-const AuthStateApp = ( {user, setUser, apiName}) => {
+const AuthStateApp = ( {user, setUser, apiName, registered}) => {
   const [authState, setAuthState] = React.useState();
   let navigate = useNavigate();
 
@@ -22,7 +22,7 @@ const AuthStateApp = ( {user, setUser, apiName}) => {
     navigate("/profile")
 
   ) : (
-    <AmplifyAuthenticator>
+    <AmplifyAuthenticator initialAuthState={registered}>
       <AmplifySignUp/>
     </AmplifyAuthenticator>
   );

@@ -53,8 +53,8 @@ function App() {
         <Route path='/about' element={<About user={user} />} />
         <Route path='/services' element={ <Services user={user}/>} />
         <Route path='/contact-us' element={ <Contact />} />
-        <Route path='/sign-up' element={ <SignUp />} />
-        <Route path='/sign-in' element={ <SignIn user={user} setUser={setUser}/>} />
+        <Route path='/sign-up' element={ <SignIn registered={"signup"}  user={user} setUser={setUser} />} />
+        <Route path='/sign-in' element={ <SignIn registered={"signin"} user={user} setUser={setUser}/>} />
         <Route path='/profile' element={ <Profile apiName={apiName}/>}/>
         <Route path='/user/onboarding' element={ <Survey apiName={apiName}/>}/>
         <Route path='/module' element={<Module apiName={apiName}/>}/>
@@ -69,7 +69,6 @@ function App() {
         height: '350px',
         width:'350px'
       }}>
-    <ModulePlayer />
     </div>
 
     </>
