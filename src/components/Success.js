@@ -11,7 +11,14 @@ export class Success extends Component {
     // PROCESS FORM //
     this.props.nextStep();
   };
-
+  state = {"once":"0"}
+  componentDidMount(){
+      const {once} = this.state
+      if(once == "0"){
+        this.makeApiCall(this.props.values)
+        this.setState({"once":"1"})
+      }
+  }
   back = e => {
     e.preventDefault();
     this.props.prevStep();
@@ -32,8 +39,8 @@ export class Success extends Component {
     let p = await API.post(this.props.apiName,path ,request)
   };
 
+
   render() {
-    this.makeApiCall(this.props.values);
     return (
       <MuiThemeProvider>
         <>
