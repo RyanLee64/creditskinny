@@ -15,6 +15,8 @@ import Skinny from './components/Skinny'
 import {Amplify} from 'aws-amplify';
 import awsconfig from './aws-exports';
 import Footer from './components/Footer'
+import Vault from './pages/vault';
+
 import ModulePlayer from './components/ModulePlayer';
 Amplify.configure(awsconfig);
 Amplify.configure({  API: {
@@ -58,6 +60,8 @@ function App() {
         <Route path='/profile' element={ <Profile apiName={apiName}/>}/>
         <Route path='/user/onboarding' element={ <Survey apiName={apiName}/>}/>
         <Route path='/module' element={<Module apiName={apiName}/>}/>
+        <Route path='/vault' element={<Vault apiName={apiName}/>}/>
+
       </Routes>
       <Footer />  
     </Router>
