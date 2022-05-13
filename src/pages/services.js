@@ -12,7 +12,7 @@ const Services = ({user}) => {
         height: '90vh'
       }}
     >
-      <h1>Services and {JSON.stringify(user).substring(0,20)}</h1>
+      <h1>We offer a tailored credit experience for individuals starting their credit journey. This consists of a module based learning curriculm and a set of tailored credit cards that will maximize the rewards YOU care about!</h1>
       
     </div>
   );
