@@ -1,0 +1,58 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-creditskinny-dev-143227-authRole",
+      "UnauthRoleArn": "arn:aws:iam::215814922646:role/amplify-creditskinny-dev-143227-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::215814922646:role/amplify-creditskinny-dev-143227-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-creditskinny-dev-143227-deployment",
+      "UnauthRoleName": "amplify-creditskinny-dev-143227-unauthRole",
+      "StackName": "amplify-creditskinny-dev-143227",
+      "StackId": "arn:aws:cloudformation:us-east-1:215814922646:stack/amplify-creditskinny-dev-143227/8e88b0a0-cbd8-11ec-bc10-129d1bf0d89b",
+      "AmplifyAppId": "d2khpy5mn44tdn"
+    }
+  },
+  "auth": {
+    "creditskinny88239757": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "output": {
+        "UserPoolId": "us-east-1_Ii5xhGSLJ",
+        "AppClientIDWeb": "3q6oore0bcuqlllftkirq0r7pb",
+        "AppClientID": "7eabb6ogu6rdkksq36c4lskn7t",
+        "IdentityPoolId": "us-east-1:64228705-e03f-4ae8-9a7a-ca2f9f236db6",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:215814922646:userpool/us-east-1_Ii5xhGSLJ",
+        "IdentityPoolName": "creditskinny88239757_identitypool_88239757__dev",
+        "UserPoolName": "creditskinny88239757_userpool_88239757"
+      },
+      "lastPushTimeStamp": "2022-05-09T00:37:09.344Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-creditskinny-dev-143227-deployment/amplify-cfn-templates/auth/creditskinny88239757-cloudformation-template.json",
+        "logicalId": "authcreditskinny88239757"
+      },
+      "lastPushDirHash": "xPv/qH9b0brf+OrWEnN1BlK1QNY="
+    }
+  }
+}
