@@ -1,0 +1,5 @@
+# Credit Skinny README
+ - Credit Skinny started as project in a course named Marketing Management in 2019. The course was about accessing the market/generating a hypothetical "MVP" and the accompanying marketing materials for a "pitch". 
+ - In this past semester I built out some of the core Credit Skinny functionalities for a COMS 6998 Cloud Computing and Big Data.
+ - The document [credit_skinny_6998.pdf](https://github.com/RyanLee64/creditskinny/blob/main/credit_skinny_6998.pdf) present in this repo is the final report for the project and contains links to relevant documents such as the 2019 "MVP" as well as video demos of the application being used end to end for a new user. All of these links are at the top of the document.
+ - The application stack utilized React, AWS (Lambda, DynamoDB, S3, API Gateway, Cognito, Amplify) and an externally hosted Elasticsearch instance in order to leverage one of their KNN neighbors for documents encoded as feature vectors which was not available inside of AWS's OpenSearch service.
